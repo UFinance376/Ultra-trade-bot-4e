@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     let depositAddress = null
     if (method === "crypto") {
       // In a real implementation, you would generate a unique address
-      depositAddress = "TDD6XsuM6FdiD3GrpDd39ZWL8rzFfLTpbU"
+      depositAddress = "TQn9Y2khEsLJW1ChVWFMSMeRDow5KcbLSE"
     }
 
     // Create deposit record

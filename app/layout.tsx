@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     default: "Ultra Finance",
   },
   description: "Advanced crypto trading platform with AI-powered insights and real-time market analysis.",
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
