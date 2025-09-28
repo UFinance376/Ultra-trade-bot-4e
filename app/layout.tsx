@@ -13,8 +13,7 @@ import Widget from "@/components/dashboard/widget"
 import Notifications from "@/components/dashboard/notifications"
 import { MobileChat } from "@/components/chat/mobile-chat"
 import Chat from "@/components/chat"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
+import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google"
 
 const mockData = mockDataJson as MockData
 
@@ -27,6 +26,24 @@ const rebelGrotesk = localFont({
   src: "../public/fonts/Rebels-Fett.woff2",
   variable: "--font-rebels",
   display: "swap",
+})
+
+const geist = Geist({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-geist",
+  subsets: ["latin"],
+})
+
+const geistMono = Geist_Mono({
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+})
+
+const sourceSerif = Source_Serif_4({
+  weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-source-serif",
+  subsets: ["latin"],
 })
 
 const isV0 = process.env["VERCEL_URL"]?.includes("vusercontent.net") ?? false
@@ -51,7 +68,7 @@ export default function RootLayout({
         <link rel="preload" href="/fonts/Rebels-Fett.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
       <body
-        className={`${rebelGrotesk.variable} ${robotoMono.variable} ${GeistSans.className} ${GeistMono.variable} antialiased`}
+        className={`${rebelGrotesk.variable} ${robotoMono.variable} ${geist.variable} ${geistMono.variable} ${sourceSerif.variable} antialiased`}
       >
         <V0Provider isV0={isV0}>
           <SidebarProvider>
